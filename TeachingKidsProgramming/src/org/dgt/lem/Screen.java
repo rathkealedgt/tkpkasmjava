@@ -1,4 +1,4 @@
-package org.dgt10.lem;
+package org.dgt.lem;
 
 import java.util.Scanner;
 

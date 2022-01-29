@@ -1,4 +1,4 @@
-package dgt10;
+package org.dgt.lem;
 
 
 public class MessageBox {
