@@ -12,6 +12,7 @@ public class Lesson5
     int length = Screen.input("Enter the length of the square.");
     anySquare(length);
   }
+
   public static void smallSquare()
   {
     for (int i = 0; i < 4; i++)
@@ -20,6 +21,7 @@ public class Lesson5
       Tortoise.turn(90);
     }
   }
+
   public static void largeSquare()
   {
     for (int i = 0; i < 4; i++)
@@ -28,6 +30,7 @@ public class Lesson5
       Tortoise.turn(90);
     }
   }
+  
   public static void anySquare(int size)
   {
     for (int i = 0; i < 4; i++)

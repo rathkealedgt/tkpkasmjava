@@ -14,10 +14,12 @@ public class Lesson2
     Screen.println("");
     Screen.print("Do you like cycling? Answer yes or no.  ");
     String answer = Screen.input();
+
     if (answer.equalsIgnoreCase("yes"))
       Screen.println("That's good - you will get very fit");
     else
       Screen.println("Perhaps you like some other sport. ");
+      
     Screen.print("Goodbye");
   }
 }

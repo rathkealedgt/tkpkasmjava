@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "TeachingKidsProgramming/Spiral.jar",
+        "TeachingKidsProgramming/src/jars/junit-4.13.2.jar",
+        "TeachingKidsProgramming/src/jars/Spiral.jar",
+        "TeachingKidsProgramming/src/jars/commons-logging-1.2.jar",
+        "TeachingKidsProgramming/src/jars/httpclient-4.3.5.jar",
+        "TeachingKidsProgramming/src/jars/httpcore-4.4.1.jar",
+        "TeachingKidsProgramming/src/jars/httpmime-4.4.1.jar",
+        "TeachingKidsProgramming/src/jars/TeachingKidsProgramming.jar"
+    ]
+}

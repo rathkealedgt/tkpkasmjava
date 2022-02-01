@@ -11,6 +11,7 @@ public class Lesson4b
     Tortoise.turn(-45);
     square();
   }
+  
   public static void square()
   {
     for (int i = 0; i < 4; i++)

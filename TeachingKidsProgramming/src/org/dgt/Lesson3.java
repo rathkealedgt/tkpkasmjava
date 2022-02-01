@@ -8,6 +8,7 @@ public class Lesson3
   {
     cooking();
   }
+
   public static void cooking()
   {
     Screen.println("Meal planner");
@@ -18,12 +19,14 @@ public class Lesson3
     Screen.println("");
     Screen.println("Which of these meals is your favourite? (1, 2 or 3)");
     String answer = Screen.input();
+
     if (answer.equals("1"))
       Screen.print("Chicken curry coming up");
     else if (answer.equals("2"))
       Screen.print("Veggie lasagne coming up");
     else
       Screen.print("Burger and salad coming up!");
+      
     Screen.println("");
     Screen.print("Enjoy!");
   }
