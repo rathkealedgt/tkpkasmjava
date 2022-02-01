@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Spiral.jar",
+        "src/jars/commons-logging-1.2.jar",
+        "src/jars/httpclient-4.3.5.jar",
+        "src/jars/httpcore-4.4.1.jar",
+        "src/jars/httpmime-4.4.1.jar",
+        "src/jars/TeachingKidsProgramming.jar"
+    ]
+}

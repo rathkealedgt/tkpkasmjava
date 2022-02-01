@@ -24,6 +24,16 @@ public class Screen
   {
     System.out.print(msg);
   }
+   /**
+   * This helper method provides a layer of abstraction for the System.out.print() method.
+   * 
+   * @param num The prompt to print to the standard out.
+   * @see System.out.print()
+   */
+  public static void print(int num)
+  {
+    System.out.print(num);
+  }
   /**
    * This helper method provides a layer of abstraction for new users to get input from
    * the standard input.
@@ -53,5 +63,23 @@ public class Screen
     int newinput = scan.nextInt();
     scan.close();
     return newinput;
+  }
+  /**
+   * This helper method provides a layer of abstraction for new users to pause execution
+   * of code in Java.
+   * 
+   * @param seconds The number of seconds to pause code execution.
+   * @see Thread
+   */
+  public static void sleep(int seconds)
+  {
+	try
+	{
+	  Thread.sleep(seconds * 1000);
+	}
+	catch(InterruptedException ie)
+	{
+	  Thread.currentThread().interrupt();
+	}
   }
 }
