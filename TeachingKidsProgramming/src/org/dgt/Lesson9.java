@@ -1,6 +1,6 @@
 package org.dgt;
 
-import org.dgt.lem.MessagegBox;
+//import org.dgt.lem.Screen;
 
 public class Lesson9
 {
@@ -8,5 +8,6 @@ public class Lesson9
   {
     //String msg = MessageBox.askForTextInput("What?");
     //MessageBox.showMessage(msg);
+
   }
 }

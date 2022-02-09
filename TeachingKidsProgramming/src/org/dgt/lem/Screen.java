@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Screen
 {
+  static Scanner scan = new Scanner(System.in);
   /**
    * This helper method provides a layer of abstraction for the System.out.println() method.
    * 
@@ -43,9 +44,11 @@ public class Screen
    */
   public static String input()
   {
-    Scanner scan = new Scanner(System.in);
-    String newinput = scan.nextLine();
-    scan.close();
+    String newinput = "";
+    
+    if(scan.hasNextLine())
+      newinput = scan.nextLine();
+  
     return newinput;
   }
   /**
@@ -59,9 +62,12 @@ public class Screen
   public static int input(String msg)
   {
     System.out.print("Enter the length of the square: ");
-    Scanner scan = new Scanner(System.in);
-    int newinput = scan.nextInt();
-    scan.close();
+
+    int newinput = 0;
+    
+    if(scan.hasNextInt())
+      newinput = scan.nextInt();
+
     return newinput;
   }
   /**
