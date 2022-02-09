@@ -14,6 +14,7 @@ public class Lesson4a
   {
     mystery();
   }
+  
   public static void mystery()
   {
     Tortoise.setPenColor(PenColors.Reds.Red);
