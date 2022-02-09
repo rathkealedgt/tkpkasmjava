@@ -6,6 +6,8 @@
         "src/jars/httpclient-4.3.5.jar",
         "src/jars/httpcore-4.4.1.jar",
         "src/jars/httpmime-4.4.1.jar",
-        "src/jars/TeachingKidsProgramming.jar"
+        "src/jars/TeachingKidsProgramming.jar",
+        "src/jars/junit-4.13.2.jar",
+        "src/jars/Spiral.jar"
     ]
 }
