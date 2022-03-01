@@ -1,115 +1,39 @@
 package org.dgt.lem;
 
-import javax.swing.AbstractButton;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-
-/* 
- * ButtonDemo.java requires the following files:
- *   images/right.gif
- *   images/middle.gif
- *   images/left.gif
- */
-public class MessageBox extends JPanel implements ActionListener {
-    protected JButton b1, b2, b3;
-
-    public MessageBox() {
-        ImageIcon leftButtonIcon = createImageIcon("");
-        ImageIcon middleButtonIcon = createImageIcon("");
-        ImageIcon rightButtonIcon = createImageIcon("");
-
-        b1 = new JButton("Disable middle button", leftButtonIcon);
-        b1.setVerticalTextPosition(AbstractButton.CENTER);
-        b1.setHorizontalTextPosition(AbstractButton.LEADING); // aka LEFT, for left-to-right locales
-        b1.setMnemonic(KeyEvent.VK_D);
-        b1.setActionCommand("disable");
-
-        b2 = new JButton("Middle button", middleButtonIcon);
-        b2.setVerticalTextPosition(AbstractButton.BOTTOM);
-        b2.setHorizontalTextPosition(AbstractButton.CENTER);
-        b2.setMnemonic(KeyEvent.VK_M);
-
-        b3 = new JButton("Enable middle button", rightButtonIcon);
-        // Use the default text position of CENTER, TRAILING (RIGHT).
-        b3.setMnemonic(KeyEvent.VK_E);
-        b3.setActionCommand("enable");
-        b3.setEnabled(false);
-
-        // Listen for actions on buttons 1 and 3.
-        b1.addActionListener(this);
-        b3.addActionListener(this);
-
-        b1.setToolTipText("Click this button to disable the middle button.");
-        b2.setToolTipText("This middle button does nothing when you click it.");
-        b3.setToolTipText("Click this button to enable the middle button.");
-
-        // Add Components to this container, using the default FlowLayout.
-        add(b1);
-        add(b2);
-        add(b3);
+public class MessageBox
+{
+    public static void msgBox(String msg)
+    {
+        JOptionPane.showMessageDialog(null, msg);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if ("disable".equals(e.getActionCommand())) {
-            b2.setEnabled(false);
-            b1.setEnabled(false);
-            b3.setEnabled(true);
-        } else {
-            b2.setEnabled(true);
-            b1.setEnabled(true);
-            b3.setEnabled(false);
-        }
+    public static void msgBox(String msg, String title)
+    {
+        JOptionPane.showMessageDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE);
     }
 
-    /** Returns an ImageIcon, or null if the path was invalid. */
-    protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = MessageBox.class.getResource(path);
-        if (imgURL != null) {
-            return new ImageIcon(imgURL);
-        } else {
-            System.err.println("Couldn't find file: " + path);
-            return null;
-        }
+    public static void yesNoBox(String msg, String title)
+    {
+        JOptionPane.showConfirmDialog(null, msg, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
     }
 
-    /**
-     * Create the GUI and show it. For thread safety,
-     * this method should be invoked from the
-     * event-dispatching thread.
-     */
-    private static void createAndShowGUI() {
-
-        // Create and set up the window.
-        JFrame frame = new JFrame("ButtonDemo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Create and set up the content pane.
-        MessageBox newContentPane = new MessageBox();
-        newContentPane.setOpaque(true); // content panes must be opaque
-        frame.setContentPane(newContentPane);
-
-        // Display the window.
-        frame.pack();
-        frame.setVisible(true);
+    public static int yesNoBox(String msg, String title, String imageURL)
+    {
+        ImageIcon icon = new ImageIcon(imageURL);
+        int response = JOptionPane.showConfirmDialog(null, msg, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
+        return response;
     }
 
-    public static void simpleBox(String msg) {
+    public static String inputBox(String msg)
+    {
+        String imageURL = "TeachingKidsProgramming\\src\\org\\dgt\\img\\bananas.jpg";
+        ImageIcon icon = new ImageIcon(imageURL);
+        String[] choices = {"Apple", "Banana", "Plum"};
 
-    }
-
-    public static void main(String[] args) {
-        // Schedule a job for the event-dispatching thread:
-        // creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
+        String input = (String) JOptionPane.showInputDialog(null, msg, "Easy Dubs", JOptionPane.INFORMATION_MESSAGE, icon, choices, "");
+        return input;
     }
 }
